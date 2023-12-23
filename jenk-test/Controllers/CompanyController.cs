@@ -13,7 +13,6 @@ namespace jenk_test.Controllers
     public class CompanyController : Controller
     {
         private readonly companyEntities dbContext; 
-
         public CompanyController()
         {
             dbContext = new companyEntities(); 
@@ -24,20 +23,20 @@ namespace jenk_test.Controllers
             return View(companies);
         }
 
-        // GET: Company/Details/5
+       
         public ActionResult Details(int id)
         {
             var company = dbContext.companyInfo.Find(id);
             return View(company);
         }
 
-        // GET: Company/Create
+        
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Company/Create
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(companyInfo company)
@@ -52,14 +51,14 @@ namespace jenk_test.Controllers
             return View(company);
         }
 
-        // GET: Company/Edit/5
+     
         public ActionResult Edit(int id)
         {
             var company = dbContext.companyInfo.Find(id);
             return View(company);
         }
 
-        // POST: Company/Edit/5
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(companyInfo company)
@@ -74,14 +73,14 @@ namespace jenk_test.Controllers
             return View(company);
         }
 
-        // GET: Company/Delete/5
+   
         public ActionResult Delete(int id)
         {
             var company = dbContext.companyInfo.Find(id);
             return View(company);
         }
 
-        // POST: Company/Delete/5
+     
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
