@@ -80,7 +80,6 @@ namespace jenk_test.Controllers
             return View(company);
         }
 
-     
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
@@ -90,5 +89,6 @@ namespace jenk_test.Controllers
             dbContext.SaveChanges();
             return RedirectToAction("Index");
         }
+        //dev
     }
 }
