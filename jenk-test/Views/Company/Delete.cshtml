@@ -1,0 +1,24 @@
+﻿@model jenk_test.Models.companyInfo
+
+<h2>Delete Company</h2>
+
+<div>
+    <h4>Are you sure you want to delete this?</h4>
+    <dl class="dl-horizontal">
+        <dt>ID</dt>
+        <dd>@Model.id</dd>
+
+        <dt>Company Name</dt>
+        <dd>@Model.companyName</dd>
+
+        <dt>Employee Count</dt>
+        <dd>@Model.employeeCount</dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <input type="submit" value="Delete" class="btn btn-default" />
+    }
+</div>
+@Html.ActionLink("Back to List", "Index")
